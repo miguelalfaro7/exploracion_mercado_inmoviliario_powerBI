@@ -1,0 +1,39 @@
+{
+  "n_train": 17295,
+  "n_test": 4318,
+  "ids_train": 17148,
+  "ids_test": 4288,
+  "ids_compartidos": 0,
+  "random_state": 42,
+  "test_size_target": 0.2,
+  "modelo_supera_baseline_en_mae_rmse_r2": true,
+  "variable_objetivo": "price",
+  "variables_predictoras": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "yr_built",
+    "yr_renovated",
+    "lat",
+    "long",
+    "zipcode"
+  ],
+  "zipcode_categorica": true,
+  "excluidas": [
+    "id",
+    "registro_id",
+    "precio_por_m2",
+    "superficie_m2",
+    "date",
+    "sqft_above",
+    "sqft_basement",
+    "sqft_living15",
+    "sqft_lot15"
+  ]
+}

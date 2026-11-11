@@ -1,0 +1,16 @@
+-- Crear estas medidas en la tabla kc_house_clean de Power BI.
+Viviendas = COUNTROWS(kc_house_clean)
+Precio Total = SUM(kc_house_clean[price])
+Precio Promedio = AVERAGE(kc_house_clean[price])
+Precio Mediano = MEDIAN(kc_house_clean[price])
+Precio por m2 = DIVIDE(SUM(kc_house_clean[price]), SUM(kc_house_clean[sqft_living]) * 0.092903)
+Superficie Total m2 = SUM(kc_house_clean[sqft_living]) * 0.092903
+Precio Promedio por m2 = AVERAGEX(kc_house_clean, DIVIDE(kc_house_clean[price], kc_house_clean[sqft_living] * 0.092903))
+Viviendas Frente al Agua = CALCULATE([Viviendas], kc_house_clean[waterfront] = 1)
+Precio Promedio Frente al Agua = CALCULATE([Precio Promedio], kc_house_clean[waterfront] = 1)
+Precio Promedio Sin Frente al Agua = CALCULATE([Precio Promedio], kc_house_clean[waterfront] = 0)
+Variacion Frente al Agua = [Precio Promedio Frente al Agua] - [Precio Promedio Sin Frente al Agua]
+-- Crear como tabla calculada, relacionar Calendario[Date] con kc_house_clean[date] y marcar como tabla de fechas.
+Calendario = CALENDAR(MIN(kc_house_clean[date]), MAX(kc_house_clean[date]))
+Precio Promedio Anterior = CALCULATE([Precio Promedio], DATEADD(Calendario[Date], -1, YEAR))
+Variacion Anual % = DIVIDE([Precio Promedio] - [Precio Promedio Anterior], [Precio Promedio Anterior])

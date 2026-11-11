@@ -1,0 +1,12 @@
+# Entornos y archivos temporales locales
+.venv/
+.mplconfig/
+__pycache__/
+*.py[cod]
+
+# Fuentes previas al CSV oficial del Integrante 1
+kc_house_data.csv
+datos/kc_house_clean.csv
+
+# El respaldo queda local; contiene resultados antiguos y un modelo grande
+respaldo_resultados_*/

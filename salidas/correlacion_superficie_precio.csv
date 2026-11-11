@@ -1,0 +1,3 @@
+metodo,coeficiente,p_valor,p_presentacion,n_ventas
+Pearson,0.7020350546118,0.0,<1e-300 (subdesbordamiento numérico),21613
+Spearman,0.6441909821578404,0.0,<1e-300 (subdesbordamiento numérico),21613
